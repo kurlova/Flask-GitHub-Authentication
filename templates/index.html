@@ -1,0 +1,13 @@
+<html>
+<head>
+	<title>Flask-GitHub Authorization tutorial</title>
+</head>
+<body>
+	{% if client_id %}
+		<p>Hello, Guest! I don't know you. You can authorize <a href="https://github.com/login/oauth/authorize?scope=user&client_id={{ client_id }}">here</a>.</p>
+	{% elif username %}
+		<p>Hello, {{ username }}!</p>
+		<p><a href="{{ url_for('logout') }}">Logout</a></p>
+	{% endif %}
+</body>
+</html>
